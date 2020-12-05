@@ -1,6 +1,6 @@
 import MUtil
 main = do
-   nums <- (read <$>) <$> getInputs
+   nums <- read <$$> getInputs
 
    let num = head [ x * y
                   | x <- nums

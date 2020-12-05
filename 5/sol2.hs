@@ -11,5 +11,5 @@ bspToBinary
                'L' -> '0')
 
 main = do
-   nums <- (bspToBinary <$>) <$> getInputs
+   nums <- bspToBinary <$$> getInputs
    print $ [minimum nums..maximum nums] \\ nums

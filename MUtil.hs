@@ -42,3 +42,7 @@ getInput = readFile "input.txt"
 
 getInputs :: IO [String]
 getInputs = lines <$> getInput
+
+(<$$>) :: (Functor f, Functor f') => (a -> b) -> f (f' a) -> f (f' b)
+(<$$>) = (<$>) . (<$>)
+infixl 4 <$$>
