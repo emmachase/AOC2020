@@ -2,8 +2,7 @@ import MUtil
 import Data.Maybe
 
 main = do
-   content <- readFile "input.txt"
-   let rows = lines content
+   rows <- getInputs
 
    let slope = cycle <$> rows
 

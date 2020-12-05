@@ -36,3 +36,9 @@ checkRange min max x = (x >= min) && (x <= max)
 
 toDec :: String -> Int
 toDec = foldl' (\acc x -> acc * 2 + digitToInt x) 0
+
+getInput :: IO String
+getInput = readFile "input.txt"
+
+getInputs :: IO [String]
+getInputs = lines <$> getInput

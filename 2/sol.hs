@@ -1,4 +1,5 @@
 import Parsing
+import MUtil
 
 parsePassword :: Parser (Int, Int, Char, String)
 parsePassword = do
@@ -24,8 +25,7 @@ checkPassword p =
    in (cnt >= min) && (cnt <= max)
 
 main = do
-   content <- readFile "input.txt"
-   let passwords = lines content
+   passwords <- getInputs
 
    print . length . filter id $ checkPassword <$> passwords
 

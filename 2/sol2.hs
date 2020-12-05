@@ -26,7 +26,6 @@ checkPassword p =
    in a /= b
 
 main = do
-   content <- readFile "input.txt"
-   let passwords = lines content
+   passwords <- getInputs
 
    print . length . filter id $ checkPassword <$> passwords

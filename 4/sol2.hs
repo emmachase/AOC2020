@@ -73,7 +73,7 @@ checkPassport pp = do
    -- getField pp "cid" -- (Country ID)
 
 main = do
-   contents <- readFile "input.txt"
+   contents <- getInput
    let passports = fromRight $ runParse passportList contents
 
    let valids = filter isJust $ checkPassport <$> passports

@@ -1,7 +1,6 @@
+import MUtil
 main = do
-   content <- readFile "input.txt"
-   let numLines = lines content
-   let nums = read <$> numLines :: [Int]
+   nums <- (read <$>) <$> getInputs
 
    let num = head [ x * y * z
                   | x <- nums
