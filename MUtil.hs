@@ -1,5 +1,8 @@
 module MUtil where
 
+import Data.Char (digitToInt)
+import Data.List (foldl')
+
 lift1List :: (a -> b) -> [a] -> (b, [a])
 lift1List f (x:xs) = (f x, xs)
 
@@ -30,3 +33,6 @@ first f xs = exists (filter f xs)
 
 checkRange :: (Num a, Ord a) => a -> a -> a -> Bool
 checkRange min max x = (x >= min) && (x <= max)
+
+toDec :: String -> Int
+toDec = foldl' (\acc x -> acc * 2 + digitToInt x) 0
