@@ -11,8 +11,8 @@ bspToBinary
                'L' -> '0')
 
 main = do
-  content <- readFile "input.txt"
-  let numLines = lines content
-  let nums = bspToBinary <$> numLines
+   content <- readFile "input.txt"
+   let numLines = lines content
+   let nums = bspToBinary <$> numLines
 
-  print $ [minimum nums..maximum nums] \\ nums
+   print $ [minimum nums..maximum nums] \\ nums
